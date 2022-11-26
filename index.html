@@ -48,7 +48,6 @@
     <h1>
       <a href="/">Cyberpatio ® | All Right Reserved </a>
     </h1>
-<<<<<<< HEAD
   </footer> -->
     <script src="script.js"></script>
     <script>
@@ -85,51 +84,6 @@
         img.src = `./images/${nextImg.src}`;
         caption.innerText = nextImg.text;
       };
-=======
-  </footer>
-  <script src="script.js"></script>
-  <script>
-
-    const imgs = [{
-      src: 'image-1.jpg',
-      text: 'Image one'
-    }, {
-      src: 'image-2.jpg',
-      text: 'Image two'
-    }, {
-      src: 'image-3.jpg',
-      text: 'Image three'
-    }, {
-      src: 'image-4.jpg',
-      text: 'Image four'
-    }];
-
-    const img = document.getElementById('image');
-    const caption = document.getElementById('caption');
-
-    
-    let currentIndex = 0;
-
-    const handleSlider = (direction) => {
-    console.log( direction)
-      
-      const lastIndex = imgs.length - 1
-      if (currentIndex === 0 && direction === -1) {
-        currentIndex = lastIndex;
-      } else if (currentIndex === lastIndex && direction === 1) {
-        currentIndex = 0;
-      }
-      else {
-        currentIndex += direction;
-      }
-      console.log(currentIndex)
-      const nextImg = imgs[currentIndex];
-      img.src =  './images/' + nextImg.src;
-      caption.innerText = nextImg.text;
-    };
-  </script>
-</body>
->>>>>>> f6256fcf8772f513d9549354a09b668259eca100
 
       const itemsList = document.getElementById("items-list");
       const addItemButton = document.getElementById("add-item-button");
