@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
-        section {
+        body {
             height: 100vh;
         }
 
         img:hover {
             transform: scale(1.1);
-            transition: .8s all
+            transition: .8s all;
         }
     </style>
     <title>Document</title>
@@ -21,23 +22,28 @@
 <body>
     <link rel="stylesheet" href="style.css" />
 
-    <section>
-    </section>
+    <!-- <section>
+    </section> -->
+
+
 </body>
 <script>
-    const section = document.querySelector('section');
+
+    const body = document.querySelector('body');
     const returnRandomNumber = () => Math.floor(Math.random() * 400);
     const arrayOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
     arrayOfNumbers.forEach(el => {
-        const randonNumber = returnRandomNumber();
-        section.insertAdjacentHTML('beforeend', `
+        const randomNumber = returnRandomNumber();
+
+        body.insertAdjacentHTML('beforeend', `
+
         <img 
 
-        style="width: ${randonNumber * .9}px;
-        top: ${randonNumber * 4}px;
-        left: ${randonNumber * 4}px;
-        transform:translate(${randonNumber})"
+        style="width: ${randomNumber * .9}px;
+        top: ${randomNumber * 4}px;
+        left: ${randomNumber * 4}px;
+        transform:translate(${randomNumber})"
 
         src="./images/cyberpatiologo.svg"
         id="${el}"
@@ -49,7 +55,7 @@
     const deleteImage = (index) => {
         const img = document.getElementById(index);
         img.remove();
-    }
+    };
 </script>
 
 </html>

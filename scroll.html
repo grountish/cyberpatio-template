@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.ico" />
     <style>
         section {
             height: 100vh;
@@ -74,9 +75,10 @@
             Some parallax here...
         </h1>
     </section>
-
+<section></section>
 </body>
 <script>
+
     const spin = document.getElementById('spin');
     const background = document.getElementById('background');
     const wohoo = document.getElementById('wohoo');
@@ -86,6 +88,7 @@
         const scrollPosition = window.scrollY;
         const spinRotation = scrollPosition * 1.5;
         spin.style.transform = `rotate(${spinRotation}deg)`;
+
         const opacity = 2 + (-700 / scrollPosition);
         background.style.backgroundColor = `hsla(${scrollPosition / 3}, 70%, 50%, ${opacity})`;
         wohoo.style.fontSize = `${scrollPosition / 10}px`;
