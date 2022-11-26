@@ -1,3 +1,19 @@
+@font-face {
+    font-family: SequelSansBody;
+    src: url(/assets/SequelSansVFBody.woff);
+    descent-override: 0%;
+  }
+  @font-face {
+    font-family: SequelSansDisplay;
+    src: url(/assets/SequelSansVFDisp.woff);
+    descent-override: 0%;
+  }
+  @font-face {
+    font-family: SequelSansHeadline;
+    src: url(/assets/SequelSansVFHead.woff);
+    descent-override: 0%;
+  }
+
 * {
     box-sizing: border-box;
     font-family: sans-serif;
@@ -6,7 +22,11 @@
     padding: 0;
 }
 
-
+.cursorHeader {
+    font-family: SequelSansDisplay;
+    font-weight: bold;
+    font-size: 17rem;
+}
 
 nav {
     position: absolute;
@@ -77,3 +97,27 @@ li {
 .flip {
     transform: rotateX(180deg);
 } 
+
+img {
+    width: 400px
+}
+.pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: all .3s;
+}
+.pop-up-fade {
+    transition: all .3s;
+}
+.opacity-0 {
+    opacity: 0;
+}

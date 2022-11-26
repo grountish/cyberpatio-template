@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <title>INDEX</title>
+  </head>
 
-  <title>INDEX</title>
-</head>
-
-<body class="h-screen">
-  <nav class="flex w-full">
+  <body class="h-screen">
+    <!-- <nav class="flex w-full">
     <li class="block lg:hidden ml-auto">
       <svg viewBox="0 0 50 80" width="20" height="20">
         <rect width="50" height="10"></rect>
         <rect y="20" width="50" height="10"></rect>
         <rect y="40" width="50" height="10"></rect>
-      </svg>
-    </li>
+      </svg> -->
+    <!-- </li>
     <li class="w-1/3 hidden lg:inline"><a href="/">CyberPortfo</a></li>
     <li class="middle-col hidden lg:inline"><a href="/work.html">WORK</a></li>
     <li class="middle-col hidden lg:inline"><a href="/scroll.html">SCROLL</a></li>
@@ -35,48 +34,60 @@
       </div>
       <div class="text-2xl cursor-pointer" onclick="handleSlider(1)">☞</div>
     </div>
-  </div>
-  </div>
-  <footer class="absolute bottom-0 mx-8 my-6">
+  </div> -->
+  <button id="add-item-button">Add Item</button>
+    <ul id="items-list"></ul>
+    <!-- </div> -->
+    <!-- <footer class="absolute bottom-0 mx-8 my-6">
     <h1>
       <a href="/">Cyberpatio ® | All Right Reserved </a>
     </h1>
-  </footer>
-  <script src="script.js"></script>
-  <script>
-    const imgs = [{
-      src: 'image-1.jpg',
-      text: 'Image one'
-    }, {
-      src: 'image-2.jpg',
-      text: 'Image two'
-    }, {
-      src: 'image-3.jpg',
-      text: 'Image three'
-    }, {
-      src: 'image-4.jpg',
-      text: 'Image four'
-    }];
-    const caption = document.getElementById('caption');
-    const img = document.getElementById('image');
-    let currentIndex = 0;
-    const handleSlider = (direction) => {
+  </footer> -->
+    <script src="script.js"></script>
+    <script>
+      const imgs = [
+        {
+          src: "image-1.jpg",
+          text: "Image one",
+        },
+        {
+          src: "image-2.jpg",
+          text: "Image two",
+        },
+        {
+          src: "image-3.jpg",
+          text: "Image three",
+        },
+        {
+          src: "image-4.jpg",
+          text: "Image four",
+        },
+      ];
+      const caption = document.getElementById("caption");
+      const img = document.getElementById("image");
+      let currentIndex = 0;
+      const handleSlider = (direction) => {
+        if (currentIndex === 0 && direction === -1) {
+          currentIndex = imgs.length - 1;
+        } else if (currentIndex === imgs.length - 1 && direction === 1) {
+          currentIndex = 0;
+        } else {
+          currentIndex += direction;
+        }
+        const nextImg = imgs[currentIndex];
+        img.src = `./images/${nextImg.src}`;
+        caption.innerText = nextImg.text;
+      };
 
-      if (currentIndex === 0 && direction === -1) {
-        currentIndex = imgs.length - 1;
-      } else if (currentIndex === imgs.length - 1 && direction === 1) {
-        currentIndex = 0;
-      }
-      else {
-        currentIndex += direction;
-      }
-      const nextImg = imgs[currentIndex];
-      img.src = `./images/${nextImg.src}`;
-      caption.innerText = nextImg.text;
-
-
-    }
-  </script>
-</body>
-
+      const itemsList = document.getElementById("items-list");
+      const addItemButton = document.getElementById("add-item-button");
+      let index = 1;
+      addItemButton.addEventListener("click", () => {
+        const newItem = document.createElement("li");
+        newItem.innerText = `Item number ${index}`;
+        itemsList.appendChild(newItem);
+        index++;
+      });
+    </script>
+  </body>
 </html>
