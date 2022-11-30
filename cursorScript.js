@@ -1,36 +1,16 @@
-const imagesSrc = [
-    {
-      srcDefault: "section1-img1.png",
-      srcHover: "section1-img2.png",
-    },
-    {
-        srcDefault: "section2-img1.png",
-        srcHover: "section2-img2.png",
-      },
-      {
-        srcDefault: "section3-img1.png",
-        srcHover: "section3-img2.png",
-      },
-      {
-        srcDefault: "section4-img1.png",
-        srcHover: "section4-img2.png",
-      },
-      {
-        srcDefault: "section5-img1.png",
-        srcHover: "section5-img2.png",
-      },
-      {
-        srcDefault: "section6-img1.png",
-        srcHover: "section6-img2.png",
-      },
-      {
-        srcDefault: "section7-img1.png",
-        srcHover: "section7-img2.png",
-      },
-      {
-        srcDefault: "section8-img1.png",
-        srcHover: "section8-img1.png",
-      }
-  ];
-  const container = document.getElementById("firstSection");
-  const img = document.getElementById("image");
+
+const imgs = document.querySelectorAll("img");
+imgs.forEach((img) => {
+  img.addEventListener("mouseover", () => {
+    const primarySource = img.getAttribute("src");
+    const secondarySource = primarySource.replace("1", "2");
+    img.setAttribute("src", secondarySource);
+    document.body.style.cursor = "url('./curs1.png'), auto";
+  });
+  img.addEventListener("mouseout", () => {
+    const primarySource = img.getAttribute("src");
+    const secondarySource = primarySource.replace("2", "1");
+    img.setAttribute("src", secondarySource);
+    document.body.style.cursor = "auto";
+  });
+});
