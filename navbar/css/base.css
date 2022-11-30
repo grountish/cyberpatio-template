@@ -63,22 +63,7 @@ Apple Safari depends on WebKit, and so do many mobile browsers (since WebKit is 
 /*The translate3d() CSS function repositions an element in 3D space. Syntax: translate3d(tx, ty, tz)
 The rotate3d() CSS function defines a transformation that rotates an element around a fixed axis in 3D space, without deforming it.
 Syntax: rotate3d(x, y, z, a) (a is angle of rotation)*/
-.menu__item-img {
-  pointer-events: none;
-  position: absolute;
-  height: 50vh;
-  max-height: 400px;
-  opacity: 0;
-  left: 100%;
-  top: 50%;
-}
-/* img animation */
-/*Plus sign is indicating that style is applied to the element that is placed immediately after*/
-.menu__item-link:hover + .menu__item-img {
-  opacity: 1;
-  transform: translate3d(calc(-100% - 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg);
-  transition: all 0.4s;
-}
+
 
 /*The mix-blend-mode CSS property sets how an element's content should blend with the content of the element's parent and the element's background.*/
 .marquee {
